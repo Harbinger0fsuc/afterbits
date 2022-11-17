@@ -1,0 +1,18 @@
+.intro-secondary {
+	padding: 16rem 0 4rem;
+
+	.breadcrumb {
+		margin-bottom: 3rem;
+	}
+
+	&__content {
+		width: 100%;
+		max-width: var(--intro-content-width);
+		margin: 0 auto;
+	}
+
+	// Modifiers for the element
+	&--pickup {
+		padding-bottom: 8.8rem;
+	}
+}

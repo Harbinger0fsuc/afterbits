@@ -1,0 +1,24 @@
+.list-circle {
+	&__item {
+		position: relative;
+		padding-left: 2.1rem;
+		margin-bottom: 0.4rem;
+		font-size: var(--p-sm);
+		font-weight: 500;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&::before {
+			position: absolute;
+			top: 0.6em;
+			left: 0.8rem;
+			width: 0.4rem;
+			height: 0.4rem;
+			content: " ";
+			background-color: currentcolor;
+			border-radius: 50%;
+		}
+	}
+}

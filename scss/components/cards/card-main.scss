@@ -1,0 +1,79 @@
+/* ----- Use local files ----- */
+@use "../../base/mixins";
+
+.card-main {
+	overflow: hidden;
+	background-color: var(--color-white);
+	border-radius: 1.4rem;
+	box-shadow: 0 0.4rem 0.4rem rgba(242, 244, 248, 0.75);
+	transition: all var(--animation-duration) var(--animation-timing-function);
+
+	&:hover {
+		filter: drop-shadow(0 0.4rem 1rem rgba(0, 0, 0, 0.1));
+	}
+
+	&-img {
+		display: flex;
+	}
+
+	&-img__inner {
+		position: relative;
+		width: 100%;
+		height: 0;
+		padding-top: 49.5%;
+
+		img,
+		svg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__content {
+		@include mixins.generalVertSpacing(0.8rem);
+
+		padding: 2rem 1.7rem;
+	}
+
+	&__date,
+	&__info,
+	&__addinfo {
+		font-size: var(--p-sm);
+	}
+
+	&__date {
+		font-weight: 500;
+		color: var(--color-gray);
+	}
+
+	&__title {
+		font-size: 1.8rem;
+	}
+
+	&__info {
+		& > * {
+			margin-bottom: 1rem;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&__addinfo {
+		font-weight: 700;
+		color: var(--text-color-accent);
+
+		&:hover {
+			color: var(--color-green-darker);
+		}
+
+		&:active {
+			opacity: 0.5;
+		}
+	}
+}

@@ -1,0 +1,23 @@
+.block-heading {
+	display: flex;
+	margin: 0 -1.5rem 4rem;
+
+	& > * {
+		padding: 0 1.5rem;
+	}
+
+	&__desc {
+		flex: 0 1 var(--block-heading-desc-width, 50%);
+	}
+
+	&__interaction {
+		display: flex;
+		flex: 1;
+		align-items: flex-start;
+		justify-content: flex-end;
+
+		&--content-down {
+			align-items: flex-end;
+		}
+	}
+}

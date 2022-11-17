@@ -1,0 +1,98 @@
+/* ----- Use local files ----- */
+@use "../../base/mixins";
+
+.card-common {
+	$this: &;
+
+	padding: 4.2rem 2.4rem 2.4rem;
+	background-color: var(--color-white);
+	border-radius: var(--radius-common);
+
+	&__img {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 2.3rem;
+		text-align: center;
+
+		img,
+		svg {
+			width: auto;
+			max-width: 160px;
+			height: auto;
+			max-height: 160px;
+			object-fit: cover;
+		}
+	}
+
+	&__content {
+		@include mixins.generalVertSpacing(0.7rem);
+
+		color: var(--text-color-primary);
+	}
+
+	&__title {
+		font-size: 2rem;
+		font-weight: 700;
+	}
+
+	&__desc {
+		margin-bottom: 1.2rem;
+		font-size: var(--p-sm);
+
+		& > * {
+			margin-bottom: 1rem;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&-links {
+		& > * {
+			margin-bottom: 0.8rem;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&-links__item {
+		display: flex;
+	}
+
+	&-links__itself {
+		font-size: var(--p-sm);
+		font-weight: 700;
+		color: var(--text-color-accent);
+
+		&:hover {
+			color: var(--color-green-darker);
+		}
+
+		&:active {
+			opacity: 0.5;
+		}
+	}
+
+	// Modifiers for the component
+	&--inline {
+		padding: 6rem 3.5rem 6rem 4rem;
+
+		#{$this}__inner {
+			display: flex;
+			height: 100%;
+		}
+
+		#{$this}__img {
+			margin-right: 3.5rem;
+			margin-bottom: 0;
+		}
+
+		#{$this}__title {
+			font-size: 2.4rem;
+		}
+	}
+}

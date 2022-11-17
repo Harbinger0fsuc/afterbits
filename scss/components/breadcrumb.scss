@@ -1,0 +1,46 @@
+.breadcrumb {
+	$this: &;
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+	}
+
+	&__item {
+		&:first-child {
+			#{$this}__text {
+				padding-left: 0;
+
+				&::before {
+					content: none;
+				}
+			}
+		}
+
+		&--current {
+			#{$this}__text {
+				opacity: 0.3;
+			}
+		}
+	}
+
+	&__text {
+		position: relative;
+		display: inline-flex;
+		padding-left: 1.3rem;
+		font-size: var(--p-sm);
+		font-weight: 500;
+
+		&::before {
+			position: absolute;
+			top: 0.63em;
+			left: 0;
+			width: 0.4rem;
+			height: 0.4rem;
+			content: " ";
+			background-color: currentcolor;
+			border-radius: 50%;
+		}
+	}
+}

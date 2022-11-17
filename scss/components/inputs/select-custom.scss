@@ -1,0 +1,51 @@
+.select-custom {
+	.choices {
+		&[data-type*=select-one] {
+			&::after {
+				width: 7px;
+				height: 7px;
+				background: url("../media/icons/different/ico-tick.svg") no-repeat center/contain;
+				border: none;
+			}
+
+			.choices__inner {
+				padding-bottom: 8.9px;
+			}
+		}
+
+		&.is-open {
+			&[data-type*=select-one] {
+				&::after {
+					margin-top: 0;
+					transform: rotate(180deg);
+				}
+			}
+		}
+	}
+
+	.choices__inner {
+		padding: 8.9px 7.5px 5.2px;
+		border-radius: 8px;
+	}
+
+	.choices__item {
+		color: var(--text-color-primary);
+	}
+
+	.choices__list--dropdown,
+	.choices__list[aria-expanded] {
+		top: calc(100% + 8px);
+		min-width: 200px;
+		border-radius: 8px;
+	}
+
+	.choices__list--dropdown {
+		.choices__item {
+			&.is-highlighted,
+			&:hover {
+				color: var(--text-color-accent-secondary);
+				background-color: var(--color-white);
+			}
+		}
+	}
+}

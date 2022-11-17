@@ -1,0 +1,50 @@
+.intro {
+	padding: 23rem 0 17.6rem;
+
+	&__items {
+		display: flex;
+		align-items: center;
+		justify-content: space-between; // just in case
+		margin: 0 -2.5rem;
+
+		& > * {
+			padding: 0 2.5rem;
+		}
+	}
+
+	&__item {
+		&--content {
+			flex: 0 1 48%;
+		}
+
+		&--media {
+			flex: 0 1 52%;
+		}
+
+		& > * {
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.headline {
+		position: relative;
+		margin-bottom: 2.4rem;
+	}
+
+	&-decor {
+		position: absolute;
+		right: -5%;
+		bottom: -38%;
+	}
+
+	&-decor__img {
+		fill: var(--text-color-primary);
+	}
+
+	.btngroup {
+		width: 100%;
+		max-width: 70%;
+	}
+}

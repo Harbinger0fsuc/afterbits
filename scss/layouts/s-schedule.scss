@@ -1,0 +1,27 @@
+.s-schedule {
+	padding: 11rem 0 20rem;
+	background-color: var(--bg-color-primary);
+
+	&__items {
+		display: flex;
+		gap: 6rem 9rem;
+	}
+
+	&__item {
+		&--media {
+			flex: 0 1 340px;
+			padding-top: 7rem;
+		}
+
+		&--content {
+			flex: 1;
+		}
+	}
+
+	&__img {
+		img,
+		svg {
+			width: 100%;
+		}
+	}
+}

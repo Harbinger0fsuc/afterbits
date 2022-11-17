@@ -1,0 +1,96 @@
+.custom-radio {
+	$this: &;
+
+	display: inline-flex;
+
+	&__itself {
+		&:not(:checked) + #{$this}__label:hover {
+			&::before {
+				border-color: var(--color-yellow-darker);
+			}
+		}
+
+		&:checked + #{$this}__label::after {
+			background-color: var(--bg-color-secondary);
+		}
+	}
+
+	&__label {
+		position: relative;
+		display: flex;
+		padding-left: 4.4rem;
+		font-size: var(--p-lg);
+		cursor: pointer;
+
+		&::before,
+		&::after {
+			position: absolute;
+			content: " ";
+			border-radius: 50%;
+			transition: all var(--animation-duration) var(--animation-timing-function);
+		}
+
+		&::before {
+			top: 0.05em;
+			left: 0;
+			width: 2.4rem;
+			height: 2.4rem;
+			border: 0.2rem solid var(--bg-color-secondary);
+		}
+
+		&::after {
+			top: 0.44em;
+			left: 0.4em;
+			width: 1rem;
+			height: 1rem;
+			background-color: transparent;
+		}
+	}
+
+	// Modifiers for the component
+	&--indented {
+		display: flex;
+
+		#{$this}__label {
+			width: 100%;
+			padding: 2.3rem 2.5rem 2.3rem 7rem;
+			color: var(--text-color-primary);
+			background-color: var(--color-white);
+			border-radius: 1.8rem;
+
+			&::before,
+			&::after {
+				top: 50%;
+				transform: translateY(-50%);
+			}
+
+			&::before {
+				left: 2.4rem;
+			}
+
+			&::after {
+				left: 3.1rem;
+			}
+		}
+	}
+
+	&--input-primary {
+		#{$this}__itself {
+			&:not(:checked) + #{$this}__label:hover {
+				&::before {
+					border-color: var(--color-green-darker);
+				}
+			}
+
+			&:checked + #{$this}__label::after {
+				background-color: var(--bg-color-primary);
+			}
+		}
+
+		#{$this}__label {
+			&::before {
+				border-color: var(--bg-color-primary);
+			}
+		}
+	}
+}

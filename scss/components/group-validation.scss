@@ -1,0 +1,32 @@
+.group-validation {
+	$this: &;
+
+	&__message {
+		display: none;
+		margin: 0.4rem 0 0;
+	}
+
+	&.is-invalid {
+		#{$this}__message {
+			display: block;
+			color: var(--color-danger);
+		}
+	}
+
+	&.is-valid {
+		#{$this}__message {
+			display: block;
+			color: var(--color-success);
+		}
+	}
+
+	@at-root .content-white {
+		.group-validation {
+			&.is-valid {
+				#{$this}__message {
+					color: var(--color-white);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,15 @@
+.form-wizard {
+	&__progress {
+		margin-bottom: 4rem;
+	}
+
+	form,
+	&__pane {
+		padding: 0;
+		margin: 0;
+	}
+
+	&__pane {
+		display: none;
+	}
+}

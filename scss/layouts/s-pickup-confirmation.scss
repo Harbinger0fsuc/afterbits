@@ -1,0 +1,12 @@
+/* ----- Use local files ----- */
+@use "../base/mixins";
+
+
+.s-pickup-confirmation {
+	padding: 8.7rem 0 9.7rem;
+	background-color: var(--bg-color-primary);
+
+	&__content {
+		@include mixins.generalVertSpacing(3.2rem);
+	}
+}

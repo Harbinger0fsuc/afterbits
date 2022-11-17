@@ -1,0 +1,28 @@
+.list-creds {
+	margin-bottom: 0;
+
+	& > * {
+		margin-bottom: 1.5rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__text {
+		position: relative;
+		display: inline-flex;
+		padding-left: 3rem;
+		font-size: var(--p-sm);
+
+		address {
+			font-style: normal;
+		}
+	}
+
+	&__ico {
+		position: absolute;
+		top: 0.3em;
+		left: 0;
+	}
+}

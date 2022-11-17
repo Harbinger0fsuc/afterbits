@@ -1,0 +1,153 @@
+/* ----- Use built-in sass modules ----- */
+@use "sass:color";
+
+/* ----- Use local files ----- */
+@use "../../base/functions" as func;
+
+.block-video {
+	$this: &;
+
+	--video-radius: var(--radius-common);
+
+	position: relative;
+
+	&__inner {
+		position: relative;
+		display: flex;
+		width: 100%;
+		height: 0;
+		padding-top: var(--block-video-aspect-ratio, 35%);
+		overflow: hidden;
+		border-radius: var(--video-radius);
+	}
+
+	&__itself {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: var(--video-radius); // to implement unnecessary borders
+	}
+
+	&-controls {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		transition: all 0.05s var(--animation-timing-function);
+
+		&.is-hidden {
+			pointer-events: none;
+			visibility: hidden;
+			opacity: 0;
+		}
+	}
+
+	&-controls__playbtn {
+		position: relative;
+		width: 6.4rem;
+		height: 6.4rem;
+		background-color: rgba(255, 255, 255, 0.2);
+		border-radius: 50%;
+		transition: background-color var(--animation-duration) var(--animation-timing-function);
+
+		&:hover {
+			background-color: var(--color-white);
+
+			&::before {
+				border-color: transparent transparent transparent var(--bg-color-primary);
+			}
+
+			&::after {
+				background-color: var(--color-white);
+			}
+		}
+
+		&:active {
+			background-color: var(--color-green-lighter);
+
+			&::before {
+				border-color: transparent transparent transparent var(--bg-color-primary);
+			}
+
+			&::after {
+				background-color: var(--color-green-lighter);
+			}
+		}
+
+		&::before,
+		&::after {
+			position: absolute;
+			content: " ";
+		}
+
+		&::before {
+			top: 53%;
+			left: 57%;
+			z-index: func.z-index("commonOver");
+			width: 0;
+			height: 0;
+			border-color: transparent transparent transparent rgba(255, 255, 255, 0.5);
+			border-style: solid;
+			border-width: 1.3rem 0 1.3rem 2.6rem;
+			transition: border-color var(--animation-duration) var(--animation-timing-function);
+			transform: translate(-50%, -50%);
+		}
+
+		&::after {
+			--offset: 1.2rem;
+
+			top: calc(var(--offset) * -1);
+			right: calc(var(--offset) * -1);
+			bottom: calc(var(--offset) * -1);
+			left: calc(var(--offset) * -1);
+			background-color: rgba(255, 255, 255, 0.3);
+			border-radius: 50%;
+			transition: background-color var(--animation-duration) var(--animation-timing-function);
+		}
+	}
+
+	// Modifiers for the component
+	&--decorated {
+		#{$this}__wrapper {
+			position: relative;
+			isolation: isolate;
+
+			&::before,
+			&::after {
+				--offset: 1.6rem;
+
+				position: absolute;
+				bottom: calc(var(--offset) * -1);
+				left: var(--offset);
+				z-index: func.z-index("below");
+				width: 100%;
+				height: 100%;
+				content: " ";
+				background-color: var(--bg-color-secondary);
+				border-radius: var(--video-radius);
+			}
+
+			&::after {
+				--offset: 3.2rem;
+
+				opacity: 0.5;
+			}
+		}
+
+		#{$this}__inner {
+			background-color: var(--bg-color-secondary);
+			// box-shadow: 1.6rem 1.6rem 0 0 var(--bg-color-secondary), 3.2rem 3.2rem 0 0 rgba(253, 202, 64, 0.5);
+		}
+	}
+}

@@ -1,0 +1,35 @@
+.socials {
+	$this: &;
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		margin-bottom: 0;
+	}
+
+	&__item,
+	&__link {
+		display: flex;
+	}
+
+	&__link {
+		&:hover {
+			#{$this}__ico {
+				fill: var(--text-color-accent-secondary);
+			}
+		}
+
+		&:active {
+			#{$this}__ico {
+				fill: var(--color-yellow-darker);
+			}
+		}
+	}
+
+	&__ico {
+		width: 2rem;
+		height: 2rem;
+		transition: all var(--animation-duration) var(--animation-timing-function);
+	}
+}

@@ -1,0 +1,46 @@
+/* ----- Use local files ----- */
+@use "../base/mixins";
+
+.s-contacts {
+	padding: 4rem 0 20rem;
+
+	&__items {
+		display: flex;
+		margin: 0 -2.8rem;
+
+		& > * {
+			padding: 0 2.8rem;
+		}
+	}
+
+	&__item {
+		&--map {
+			flex: 0 1 632px;
+		}
+
+		&--content {
+			@include mixins.generalVertSpacing(3rem);
+
+			flex: 1;
+			align-items: flex-start;
+		}
+	}
+
+	.block-map,
+	.block-map__wrapper {
+		height: 100%;
+	}
+
+	.block-map {
+		max-height: 500px;
+	}
+
+	.block-map__wrapper {
+		padding-top: initial;
+	}
+
+	.list-creds,
+	.socials {
+		margin-bottom: 3rem;
+	}
+}

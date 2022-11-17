@@ -1,0 +1,12 @@
+.s-pricing-info {
+	padding: 4rem 0 7.5rem;
+
+	.grid-common {
+		--gap: 1.2rem;
+	}
+
+	.grid-common__col {
+		flex-basis: 50%;
+		margin-bottom: 2.5rem;
+	}
+}

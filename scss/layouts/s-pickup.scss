@@ -1,0 +1,36 @@
+.s-pickup {
+	padding: 13.8rem 0 15rem;
+	background-color: var(--bg-color-primary);
+
+	.headline {
+		margin-bottom: 2.8rem;
+	}
+
+	&__items {
+		display: flex;
+		gap: 9rem;
+	}
+
+	&__item {
+		&--content {
+			flex: 1 1 671px;
+		}
+
+		&--media {
+			flex: 1;
+		}
+	}
+
+	&__img {
+		width: 100%;
+	}
+
+	.steps__item {
+		&.is-active {
+			.steps__text::before {
+				background-color: var(--bg-color-secondary);
+				border-color: var(--bg-color-secondary);
+			}
+		}
+	}
+}

@@ -1,0 +1,25 @@
+.s-about {
+	padding: 13rem 0 12rem;
+	background-color: var(--bg-color-primary);
+
+
+	&__items {
+		display: flex;
+		gap: 10rem;
+	}
+
+	&__item {
+		&--content {
+			flex: 0 1 490px;
+		}
+
+		&--media {
+			flex: 1;
+		}
+	}
+
+	&__img {
+		overflow: hidden;
+		border-radius: var(--radius-common);
+	}
+}

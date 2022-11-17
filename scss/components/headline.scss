@@ -1,0 +1,25 @@
+/* ----- Use local files ----- */
+@use "../base/mixins" as mixins;
+
+.headline {
+	@include mixins.generalVertSpacing(1.5rem);
+
+	& > a {
+		display: inline-block;
+	}
+
+	&__title {
+		margin-bottom: 1.3rem;
+	}
+
+	&__content {
+		& > * {
+			margin-bottom: 1.5rem;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+

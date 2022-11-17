@@ -1,0 +1,27 @@
+.list-cards-numbered {
+	counter-reset: listCardsCounter;
+
+	&__item {
+		position: relative;
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 4rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 5.6rem;
+			height: 5.6rem;
+			font-size: 2rem;
+			font-weight: 700;
+			color: var(--color-white);
+			content: counter(listCardsCounter);
+			counter-increment: listCardsCounter;
+			background-color: var(--bg-color-secondary);
+			border-radius: 50%;
+			box-shadow: 0 0 0 0.8rem var(--color-yellow-lighter);
+			transform: translateY(-50%);
+		}
+	}
+}

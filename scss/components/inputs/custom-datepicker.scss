@@ -1,0 +1,11 @@
+.custom-datepicker {
+	&__itself {
+		&[type] {
+			padding-right: 4rem;
+			background-image: url("../media/icons/different/ico-calendar.svg");
+			background-repeat: no-repeat;
+			background-position: calc(100% - 1.5rem) center;
+			background-size: 1.6rem;
+		}
+	}
+}

@@ -1,0 +1,46 @@
+/* ----- Use local files ----- */
+@use "../../base/functions" as func;
+
+.list-compare {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 2.4rem;
+	margin-bottom: 0;
+
+	&__item {
+		position: relative;
+
+		&:nth-child(odd) {
+			&:last-child {
+				&::after {
+					content: none;
+				}
+			}
+
+			&::after {
+				--size: 5.6rem;
+
+				position: absolute;
+				top: 50%;
+				left: calc(100% - (var(--size) / 4));
+				z-index: func.z-index("commonOver");
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: var(--size);
+				height: var(--size);
+				font-size: var(--p-lg);
+				font-weight: 700;
+				color: var(--text-color-primary);
+				content: "or";
+				background-color: var(--bg-color-secondary);
+				border-radius: 50%;
+				transform: translateY(-50%);
+			}
+		}
+
+		& > * {
+			height: 100%;
+		}
+	}
+}

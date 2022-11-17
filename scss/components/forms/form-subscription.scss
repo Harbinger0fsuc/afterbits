@@ -1,0 +1,80 @@
+/* ----- Use local files ----- */
+@use "../../base/mixins";
+
+.form-subscription {
+	$this: &;
+
+	@include mixins.generalVertSpacing(2rem);
+
+	&__heading {
+		@include mixins.generalVertSpacing(0.5rem);
+	}
+
+	&__title {
+		margin-bottom: 0.5rem;
+		font-size: 2rem;
+	}
+
+	&__content {
+		font-size: var(--p-sm);
+
+		& > * {
+			margin-bottom: 1rem;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	form {
+		padding: 0;
+		margin: 0;
+	}
+
+	&__inputgroup {
+		position: relative;
+
+		input {
+			min-width: 370px;
+			max-width: 100%;
+			padding-right: 37%;
+		}
+	}
+
+	&__btn,
+	&__btn[type] {
+		position: absolute;
+		top: 50%;
+		right: 2.4rem;
+		max-width: 35%;
+		padding: 0;
+		font-size: var(--p-sm);
+		color: var(--text-color-accent);
+		background-color: transparent;
+		border: none;
+		border-radius: 0;
+		transform: translateY(-50%);
+
+		&:hover {
+			color: var(--color-green-darker);
+		}
+
+		&:active {
+			opacity: 0.5;
+		}
+	}
+
+	// Modifiers for the component
+	&--inline {
+		display: flex;
+		flex-direction: row;
+		gap: 4rem;
+		align-items: flex-end;
+		justify-content: space-between;
+
+		& > * {
+			margin-bottom: 0;
+		}
+	}
+}
