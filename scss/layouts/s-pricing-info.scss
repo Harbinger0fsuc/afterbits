@@ -1,3 +1,6 @@
+/* ----- Use different tools ----- */
+@use "../tools/include-media";
+
 .s-pricing-info {
 	padding: 4rem 0 7.5rem;
 
@@ -8,5 +11,19 @@
 	.grid-common__col {
 		flex-basis: 50%;
 		margin-bottom: 2.5rem;
+	}
+}
+
+@include include-media.media("<=tablet") {
+	.s-pricing-info {
+		.grid-common__col {
+			flex-basis: 100%;
+		}
+	}
+}
+
+@include include-media.media("<=phone") {
+	.s-pricing-info {
+		padding: 2rem 0 5rem;
 	}
 }

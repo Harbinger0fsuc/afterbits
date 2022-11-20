@@ -1,6 +1,9 @@
 /* ----- Use local files ----- */
 @use "../../base/mixins";
 
+/* ----- Use different tools ----- */
+@use "../../tools/include-media";
+
 .form-subscription {
 	$this: &;
 
@@ -75,6 +78,23 @@
 
 		& > * {
 			margin-bottom: 0;
+		}
+	}
+}
+
+@include include-media.media("<tablet") {
+	.form-subscription {
+		&__inputgroup {
+			input {
+				min-width: 100%;
+			}
+		}
+
+		// Modifiers for the component
+		&--inline {
+			flex-direction: column;
+			gap: 2rem;
+			align-items: stretch;
 		}
 	}
 }

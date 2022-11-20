@@ -1,6 +1,9 @@
 /* ----- Use local files ----- */
 @use "../base/mixins";
 
+/* ----- Use different tools ----- */
+@use "../tools/include-media";
+
 .s-contacts {
 	padding: 4rem 0 20rem;
 
@@ -42,5 +45,37 @@
 	.list-creds,
 	.socials {
 		margin-bottom: 3rem;
+	}
+}
+
+@include include-media.media("<desktop") {
+	.s-contacts {
+		padding-bottom: 15rem;
+
+		&__items {
+			flex-direction: column;
+			gap: 4rem;
+		}
+
+		&__item {
+			&--map {
+				flex-basis: auto;
+			}
+		}
+
+		.block-map,
+		.block-map__wrapper {
+			height: auto;
+		}
+
+		.block-map__wrapper {
+			padding-top: 40%;
+		}
+	}
+}
+
+@include include-media.media("<=phone") {
+	.s-contacts {
+		padding-bottom: 13rem;
 	}
 }

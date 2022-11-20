@@ -1,5 +1,11 @@
+/* ----- Use built-in sass modules ----- */
+@use "sass:math";
+
 /* ----- Use local files ----- */
 @use "../../base/mixins";
+
+/* ----- Use different tools ----- */
+@use "../../tools/include-media";
 
 .form-primary {
 	--gap: 0.9rem;
@@ -88,3 +94,43 @@
 	}
 }
 
+@include include-media.media("<=md-phone") {
+	.form-primary {
+		&__col {
+			&--half {
+				flex-basis: 100%;
+			}
+
+			&--quarter {
+				flex-basis: math.percentage(math.div(1, 3));
+			}
+		}
+
+		&__inputgroup {
+			&--several-elms {
+				flex-direction: column;
+				gap: 2.4rem;
+			}
+		}
+	}
+}
+
+@include include-media.media("<=sm-phone") {
+	.form-primary {
+		&__col {
+			&--quarter {
+				flex-basis: 50%;
+			}
+		}
+	}
+}
+
+@include include-media.media("<=xs-phone") {
+	.form-primary {
+		&__col {
+			&--quarter {
+				flex-basis: 100%;
+			}
+		}
+	}
+}

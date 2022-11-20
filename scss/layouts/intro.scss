@@ -1,3 +1,6 @@
+/* ----- Use different tools ----- */
+@use "../tools/include-media";
+
 .intro {
 	padding: 23rem 0 17.6rem;
 
@@ -44,7 +47,72 @@
 	}
 
 	.btngroup {
-		width: 100%;
 		max-width: 70%;
+	}
+}
+
+@include include-media.media("<desktop") {
+	.intro {
+		padding: 20rem 0 15.6rem;
+
+		&__items {
+			flex-direction: column;
+			align-items: stretch;
+
+			& > * {
+				margin-bottom: 4rem;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		&__item {
+			&--content,
+			&--media {
+				flex-basis: 100%;
+			}
+		}
+
+		&-decor {
+			right: 50%;
+			bottom: -47%;
+			transform: rotateX(185deg) rotateZ(-41deg);
+		}
+
+		&-decor__img {
+			width: 140px;
+		}
+	}
+}
+
+@include include-media.media("<tablet") {
+	.intro {
+		&-decor {
+			right: 35%;
+			bottom: -55%;
+			transform: rotateX(185deg) rotateZ(-60deg);
+		}
+	}
+}
+
+@include include-media.media("<=phone") {
+	.intro {
+		padding: 15rem 0;
+
+		&-decor {
+			right: 20%;
+		}
+	}
+}
+
+@include include-media.media("<=sm-phone") {
+	.intro {
+		&-decor {
+			right: -18px;
+			bottom: -35%;
+			transform: rotateX(185deg) rotateZ(-140deg);
+		}
 	}
 }

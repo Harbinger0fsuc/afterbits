@@ -1,6 +1,9 @@
 /* ----- Use local files ----- */
 @use "../../base/functions" as func;
 
+/* ----- Use different tools ----- */
+@use "../../tools/include-media";
+
 .header {
 	position: absolute;
 	top: 0;
@@ -18,5 +21,23 @@
 		& > * {
 			padding: 0 1.5rem;
 		}
+	}
+
+	.nav-toggler {
+		display: none;
+	}
+}
+
+@include include-media.media("<desktop") {
+	.header {
+		.nav-toggler {
+			display: block;
+		}
+	}
+}
+
+@include include-media.media("<=phone") {
+	.header {
+		padding: 4rem 0;
 	}
 }

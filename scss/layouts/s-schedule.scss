@@ -1,3 +1,6 @@
+/* ----- Use different tools ----- */
+@use "../tools/include-media";
+
 .s-schedule {
 	padding: 11rem 0 20rem;
 	background-color: var(--bg-color-primary);
@@ -23,5 +26,34 @@
 		svg {
 			width: 100%;
 		}
+	}
+}
+
+@include include-media.media("<=md-desktop") {
+	.s-schedule {
+		&__items {
+			gap: 5rem;
+		}
+	}
+}
+
+@include include-media.media("<desktop") {
+	.s-schedule {
+		&__items {
+			flex-direction: column;
+		}
+
+		&__item {
+			&--media {
+				flex-basis: auto;
+				padding-top: 0;
+			}
+		}
+	}
+}
+
+@include include-media.media("<=phone") {
+	.s-schedule {
+		padding: 10rem 0 10.5rem;
 	}
 }

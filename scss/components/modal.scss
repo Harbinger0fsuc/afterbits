@@ -1,6 +1,9 @@
 /* ----- Use local files ----- */
 @use "../base/functions" as func;
 
+/* ----- Use different tools ----- */
+@use "../tools/include-media";
+
 .modal {
 	$this: &;
 
@@ -37,7 +40,9 @@
 	&__content {
 		width: 100%;
 		max-width: 740px;
+		max-height: 95vh;
 		padding: 4.8rem 7.4rem 6.2rem;
+		overflow: hidden auto;
 		background-color: var(--color-white);
 		border-radius: var(--radius-common);
 	}
@@ -88,6 +93,22 @@
 		#{$this}__overlay {
 			background-color: transparent;
 			backdrop-filter: blur(0);
+		}
+	}
+}
+
+@include include-media.media("<=phone") {
+	.modal {
+		&__content {
+			padding: 4.8rem 4.4rem 4.2rem;
+		}
+	}
+}
+
+@include include-media.media("<=md-phone") {
+	.modal {
+		&__content {
+			padding: 3.8rem 3.5rem 3.5rem;
 		}
 	}
 }

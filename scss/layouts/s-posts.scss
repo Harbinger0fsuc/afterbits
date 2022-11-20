@@ -1,6 +1,9 @@
 /* ----- Use built-in sass modules ----- */
 @use "sass:math";
 
+/* ----- Use different tools ----- */
+@use "../tools/include-media";
+
 .s-posts {
 	.grid-common {
 		--gap: 1.2rem;
@@ -14,5 +17,27 @@
 	// Modifiers for the section
 	&--about {
 		padding: 20rem 0 7rem;
+	}
+}
+
+@include include-media.media("<=tablet") {
+	.s-posts {
+		.grid-common__col {
+			flex-basis: 50%;
+		}
+	}
+}
+
+@include include-media.media("<=phone") {
+	.s-posts {
+		padding: 6.8rem 0;
+	}
+}
+
+@include include-media.media("<=md-phone") {
+	.s-posts {
+		.grid-common__col {
+			flex-basis: 100%;
+		}
 	}
 }

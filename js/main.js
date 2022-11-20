@@ -17,3 +17,6 @@ import modal from "./components/modal";
 import formWizard from "./components/formWizard";
 import customSelect from "./components/customSelect";
 import customDatepicker from "./components/customDatepicker";
+import openMobNav from "./components/openMobNav";
+import closeMobNav from "./components/closeMobNav";
+import hideNavOnResize from "./components/hideNavOnResize";

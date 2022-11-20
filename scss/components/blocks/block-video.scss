@@ -1,6 +1,9 @@
 /* ----- Use built-in sass modules ----- */
 @use "sass:color";
 
+/* ----- Use different tools ----- */
+@use "../../tools/include-media";
+
 /* ----- Use local files ----- */
 @use "../../base/functions" as func;
 
@@ -119,6 +122,8 @@
 
 	// Modifiers for the component
 	&--decorated {
+		padding-right: 3rem;
+
 		#{$this}__wrapper {
 			position: relative;
 			isolation: isolate;
@@ -148,6 +153,23 @@
 		#{$this}__inner {
 			background-color: var(--bg-color-secondary);
 			// box-shadow: 1.6rem 1.6rem 0 0 var(--bg-color-secondary), 3.2rem 3.2rem 0 0 rgba(253, 202, 64, 0.5);
+		}
+	}
+}
+
+@include include-media.media("<=phone") {
+	.block-video {
+		&__inner {
+			padding-top: 70%;
+		}
+
+		&-controls__playbtn {
+			width: 4.4rem;
+			height: 4.4rem;
+
+			&::before {
+				border-width: 1.1rem 0 1.1rem 2.3rem;
+			}
 		}
 	}
 }

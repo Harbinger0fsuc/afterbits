@@ -1,3 +1,6 @@
+/* ----- Use different tools ----- */
+@use "../tools/include-media";
+
 .s-team {
 	padding: 10rem 0 17rem;
 
@@ -11,5 +14,11 @@
 
 	.grid-common__col {
 		margin-bottom: 3.2rem;
+	}
+}
+
+@include include-media.media("<=phone") {
+	.s-team {
+		padding: 6rem 0 6.8rem;
 	}
 }

@@ -1,5 +1,6 @@
 .logo {
 	display: inline-flex;
+	flex-shrink: 0;
 
 	&__img {
 		width: 175px;

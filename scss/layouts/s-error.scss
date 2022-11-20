@@ -1,3 +1,6 @@
+/* ----- Use different tools ----- */
+@use "../tools/include-media";
+
 .s-error {
 	padding: 21rem 0 7rem;
 
@@ -14,5 +17,21 @@
 
 	.headline {
 		margin-bottom: 3.2rem;
+	}
+}
+
+@include include-media.media("<=phone") {
+	.s-error {
+		&__title {
+			font-size: 15rem;
+		}
+	}
+}
+
+@include include-media.media("<=sm-phone") {
+	.s-error {
+		&__title {
+			font-size: 12rem;
+		}
 	}
 }

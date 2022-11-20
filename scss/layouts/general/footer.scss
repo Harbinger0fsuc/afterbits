@@ -1,3 +1,6 @@
+/* ----- Use different tools ----- */
+@use "../../tools/include-media";
+
 .footer {
 	padding-top: 10rem;
 
@@ -69,6 +72,7 @@
 	}
 
 	&-addinfo__inner {
+		align-items: center;
 		justify-content: space-between;
 		padding: 1.8rem 0;
 		margin: 0 -1rem;
@@ -102,5 +106,47 @@
 	// Modifiers for the element
 	&--ptlg {
 		padding-top: 20rem;
+	}
+}
+
+@include include-media.media("<=tablet") {
+	.footer {
+		&__desc,
+		&__nav {
+			margin-right: 6rem;
+		}
+	}
+}
+
+@include include-media.media("<=phone") {
+	.footer {
+		padding-top: 6.8rem;
+	}
+}
+
+@include include-media.media("<=md-phone") {
+	.footer {
+		&-info__inner,
+		&-addinfo__inner {
+			flex-direction: column;
+			gap: 3rem;
+		}
+
+		&__desc,
+		&__nav {
+			margin-right: 0;
+		}
+
+		&-addinfo__inner {
+			align-items: stretch;
+
+			& > * {
+				width: 100%;
+			}
+		}
+
+		&__terms {
+			justify-content: stretch;
+		}
 	}
 }

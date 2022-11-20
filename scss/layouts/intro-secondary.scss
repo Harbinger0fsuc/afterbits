@@ -1,5 +1,8 @@
+/* ----- Use different tools ----- */
+@use "../tools/include-media";
+
 .intro-secondary {
-	padding: 16rem 0 4rem;
+	padding: 16rem 0 9rem;
 
 	.breadcrumb {
 		margin-bottom: 3rem;
@@ -14,5 +17,11 @@
 	// Modifiers for the element
 	&--pickup {
 		padding-bottom: 8.8rem;
+	}
+}
+
+@include include-media.media("<=phone") {
+	.intro-secondary {
+		padding: 11.5rem 0 5.5rem;
 	}
 }

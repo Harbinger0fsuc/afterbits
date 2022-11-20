@@ -1,3 +1,6 @@
+/* ----- Use different tools ----- */
+@use "../tools/include-media";
+
 .s-about {
 	padding: 13rem 0 12rem;
 	background-color: var(--bg-color-primary);
@@ -10,7 +13,7 @@
 
 	&__item {
 		&--content {
-			flex: 0 1 490px;
+			flex: 0 1 42%;
 		}
 
 		&--media {
@@ -21,5 +24,31 @@
 	&__img {
 		overflow: hidden;
 		border-radius: var(--radius-common);
+
+		img {
+			width: 100%;
+		}
+	}
+}
+
+@include include-media.media("<desktop") {
+	.s-about {
+		&__items {
+			flex-direction: column;
+			gap: 4rem;
+		}
+
+		&__item {
+			&--content,
+			&--media {
+				flex: 1 1 auto;
+			}
+		}
+	}
+}
+
+@include include-media.media("<=phone") {
+	.s-about {
+		padding: 9.6rem 0 10rem;
 	}
 }

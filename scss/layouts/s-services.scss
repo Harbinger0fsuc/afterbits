@@ -1,8 +1,17 @@
+/* ----- Use different tools ----- */
+@use "../tools/include-media";
+
 .s-services {
 	padding: 12.8rem 0 11.6rem;
 	background-color: var(--bg-color-primary);
 
 	.block-heading {
 		margin-bottom: 4.5rem;
+	}
+}
+
+@include include-media.media("<=phone") {
+	.s-services {
+		padding: 9.6rem 0 10rem;
 	}
 }

@@ -96,7 +96,7 @@
 	}
 
 	&.wht {
-		color: color("white");
+		color: color(white);
 
 		@include mixins.h {
 			color: inherit;
@@ -104,7 +104,7 @@
 	}
 
 	&.blk {
-		color: color("black");
+		color: color(black);
 
 		@include mixins.h {
 			color: inherit;

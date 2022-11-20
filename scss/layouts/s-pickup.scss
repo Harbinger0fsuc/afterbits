@@ -1,3 +1,6 @@
+/* ----- Use different tools ----- */
+@use "../tools/include-media";
+
 .s-pickup {
 	padding: 13.8rem 0 15rem;
 	background-color: var(--bg-color-primary);
@@ -17,12 +20,17 @@
 		}
 
 		&--media {
-			flex: 1;
+			flex: 1 1 auto;
 		}
 	}
 
 	&__img {
 		width: 100%;
+
+		img,
+		svg {
+			max-width: 100%;
+		}
 	}
 
 	.steps__item {
@@ -32,5 +40,30 @@
 				border-color: var(--bg-color-secondary);
 			}
 		}
+	}
+}
+
+@include include-media.media("<desktop") {
+	.s-pickup {
+		&__items {
+			flex-direction: column-reverse;
+			gap: 6rem;
+		}
+
+		&__item {
+			&--content {
+				flex-basis: auto;
+			}
+
+			&--media {
+				text-align: center;
+			}
+		}
+	}
+}
+
+@include include-media.media("<=phone") {
+	.s-pickup {
+		padding: 10rem 0;
 	}
 }

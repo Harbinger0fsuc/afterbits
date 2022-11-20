@@ -10,7 +10,7 @@ const initSliderGallery = () => {
 			const next = arrows.querySelector(".arrows-main__btn--next");
 			const config = {
 				modules: [Grid, Navigation],
-				slidesPerView: 3,
+				slidesPerView: 1,
 				spaceBetween: 30,
 				grid: {
 					rows: 2,
@@ -19,6 +19,22 @@ const initSliderGallery = () => {
 				navigation: {
 					prevEl: "",
 					nextEl: "",
+				},
+				breakpoints: {
+					667: {
+						slidesPerView: 2,
+						grid: {
+							rows: 2,
+							fill: "row",
+						},
+					},
+					1024: {
+						slidesPerView: 3,
+						grid: {
+							rows: 2,
+							fill: "row",
+						},
+					},
 				},
 			};
 

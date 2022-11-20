@@ -1,3 +1,12 @@
+/* ----- Use different tools ----- */
+@use "../tools/include-media";
+
 .s-gallery {
 	padding: 20rem 0 10rem;
+}
+
+@include include-media.media("<=phone") {
+	.s-gallery {
+		padding: 13.6rem 0 6.8rem;
+	}
 }

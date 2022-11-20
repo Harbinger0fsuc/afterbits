@@ -1,3 +1,6 @@
+/* ----- Use different tools ----- */
+@use "../tools/include-media";
+
 .s-demo {
 	padding-top: 20rem;
 
@@ -21,6 +24,10 @@
 		padding: 20rem 0 16rem;
 	}
 
+	&--services-residential {
+		padding-top: 7rem;
+	}
+
 	&--pricing {
 		padding: 10rem 0 20rem;
 	}
@@ -31,5 +38,36 @@
 
 	&--inner {
 		padding: 20rem 0;
+	}
+}
+
+@include include-media.media("<=phone") {
+	.s-demo {
+		padding: 13.6rem 0 6.8rem;
+
+		.grid-common__col {
+			flex-basis: 100%;
+		}
+
+		// Modifiers for the element
+		&--services {
+			padding: 13.6rem 0 10rem;
+		}
+
+		&--services-residential {
+			padding: 6rem 0;
+		}
+
+		&--pricing {
+			padding: 6.8rem 0 12.6rem;
+		}
+
+		&--about {
+			padding: 6.8rem 0;
+		}
+
+		&--inner {
+			padding: 13.6rem 0;
+		}
 	}
 }

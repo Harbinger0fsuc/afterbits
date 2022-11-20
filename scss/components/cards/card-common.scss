@@ -1,3 +1,6 @@
+/* ----- Use different tools ----- */
+@use "../../tools/include-media";
+
 /* ----- Use local files ----- */
 @use "../../base/mixins";
 
@@ -93,6 +96,34 @@
 
 		#{$this}__title {
 			font-size: 2.4rem;
+		}
+	}
+}
+
+@include include-media.media("<desktop") {
+	.card-common {
+		// Modifiers for the component
+		&--inline {
+			padding: 4rem 2.4rem;
+		}
+	}
+}
+
+@include include-media.media("<=phone") {
+	.card-common {
+		$this: &;
+
+		// Modifiers for the component
+		&--inline {
+			#{$this}__inner {
+				flex-direction: column;
+			}
+
+			#{$this}__img {
+				justify-content: stretch;
+				margin-right: 0;
+				margin-bottom: 2rem;
+			}
 		}
 	}
 }

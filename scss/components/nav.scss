@@ -1,4 +1,14 @@
+/* ----- Use local files ----- */
+@use "../base/functions" as func;
+
+/* ----- Use different tools ----- */
+@use "../tools/include-media";
+
 .nav {
+	&__close {
+		display: none;
+	}
+
 	&__list {
 		display: flex;
 		flex-wrap: wrap;
@@ -8,5 +18,54 @@
 
 	&__link {
 		font-size: 1.8rem;
+	}
+}
+
+@include include-media.media("<desktop") {
+	.nav {
+		position: fixed;
+		top: 0;
+		right: 0;
+		z-index: func.z-index("navigation");
+		width: 300px;
+		height: 100vh;
+		padding: 7rem 0;
+		overflow: hidden auto;
+		background-color: var(--bg-color-primary);
+		box-shadow: 0.2rem 0 1.7rem 0.1rem var(--color-black);
+		transition: all var(--animation-duration) var(--animation-timing-function);
+		transform: translateX(105%);
+
+		&__close {
+			position: absolute;
+			top: 1rem;
+			right: 1rem;
+			display: inline-flex;
+
+			svg {
+				fill: var(--color-white);
+			}
+		}
+
+		&__list {
+			flex-direction: column;
+			gap: 0;
+		}
+
+		&__link {
+			display: block;
+			padding: 2rem;
+			color: var(--color-white);
+			text-align: center;
+
+			&:hover {
+				background-color: var(--color-white);
+			}
+		}
+
+		// Modifiers for the element
+		&.is-visible {
+			transform: translateX(0);
+		}
 	}
 }
